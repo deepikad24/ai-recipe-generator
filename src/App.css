@@ -24,55 +24,88 @@ body {
   text-align: center;
 }
 
-.header-container {
-  padding-bottom: 2.5rem;
+.ai-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 1rem;
 }
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+
+  /* 🔥 animation fix */
+  animation: bounceIn 0.9s ease-out forwards, floatAvatar 4s ease-in-out infinite;
+}
+
+/* Bounce in once */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Gentle float loop */
+@keyframes floatAvatar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 
 .main-header {
   font-size: 3rem;
   font-weight: 700;
-  color: #111827;
-  margin-bottom: 0.5rem;
-  animation: fadeSlideIn 1.5s ease-out forwards;
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-@keyframes fadeSlideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  color: #1f2937;
+  margin-bottom: 0.25rem;
 }
 
 .ai-badge {
   font-size: 0.875rem;
   color: #6b7280;
   font-style: italic;
-  margin-top: -0.5rem;
-  margin-bottom: 1rem;
-  letter-spacing: 0.5px;
+  margin-top: 0.25rem;
 }
 
 .deepu-name {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #4b5563;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1f2937; 
+  margin: 0.5rem 0;
+}
+
+.instruction-text {
+  font-size: 1rem;
+  color: #4b5563; 
+  margin-bottom: 2rem;
 }
 
 .sub-description {
   font-size: 1rem;
   font-style: italic;
   color: #6b7280;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.instruction-text {
-  font-size: 1rem;
-  color: #9ca3af;
-  margin-bottom: 2rem;
-}
 
 .form-container {
   margin-bottom: 30px;
@@ -94,6 +127,7 @@ body {
   border-radius: 6px;
   background-color: #fff;
   color: #111827;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .search-button {
@@ -107,14 +141,11 @@ body {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .search-button:hover {
   background-color: #1f2937;
-}
-
-.result-container {
-  margin-top: 20px;
 }
 
 .loader-container {
@@ -145,15 +176,60 @@ body {
   100% { content: "..."; }
 }
 
+.result-container {
+  margin-top: 20px;
+}
+
 .result {
-  background-color: #f3f4f6;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 24px;
   text-align: left;
-  color: #111827;
+  color: #1f2937;
+  font-weight: 500;
+  line-height: 1.6;
   white-space: pre-wrap;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
   animation: recipeFadeIn 0.8s ease-out;
+}
+
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+  margin: 30px auto 40px;
+  width: 60%;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #6f42c1, #d63384, #fd7e14);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.gradient-sub {
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: linear-gradient(90deg, #6f42c1, #d63384, #fd7e14);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-top: 0.25rem;
+}
+
+.result-wrapper {
+  position: relative;
+  padding: 2px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  box-shadow: 0 0 20px rgba(100, 100, 255, 0.05);
 }
 
 @keyframes recipeFadeIn {
@@ -164,5 +240,33 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+.gradient-text, .gradient-sub {
+  opacity: 0;
+  transform: translateY(-8px);
+  animation: fadeInSlide 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    font-size: 2rem;
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+  }
+
+  .wide-input {
+    font-size: 14px;
   }
 }
