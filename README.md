@@ -1,54 +1,52 @@
-# React + TypeScript + Vite
+# DEEPU – Your AI Recipe Companion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DEEPU (Data-Enhanced Engine for Preparing Unforgettable Recipes) is a modern, serverless web application that transforms your available ingredients into intelligent, personalized recipes using generative AI.
 
-Currently, two official plugins are available:
+Built with Amazon Bedrock, AWS Lambda, AppSync, and Cognito, DEEPU integrates advanced AI capabilities into a seamless culinary experience — all within a fully serverless architecture.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## What Does DEEPU Do?
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+DEEPU empowers users to input a list of ingredients and receive a fully structured, high-quality recipe crafted by artificial intelligence. Whether you're a home cook or simply looking to reduce food waste, DEEPU intelligently interprets your input and returns creative, delicious meal ideas in seconds.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Live Application
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Access the live application here:  
+[https://main.d2dglaytcfnhl3.amplifyapp.com](https://main.d2dglaytcfnhl3.amplifyapp.com)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## Key Features
+
+- AI-generated recipes based on your input ingredients
+- Ingredient recognition and intelligent pairing
+- Personalized recipe instructions and summaries
+- Serverless deployment with full scalability
+- User authentication via AWS Cognito
+
+---
+
+## Application Preview
+
+![DEEPU App Screenshot](./deeput-ui-preview.png)
+
+A clean and intuitive user interface designed to deliver an elegant and focused cooking experience, powered by AI.
+
+---
+
+## Architecture Overview
+
+![DEEPU Architecture](https://camo.githubusercontent.com/2bd1de6dcb944e6fa18957db532a829df3ed4ce3fcc5dd91743e9ff2dd54c139/68747470733a2f2f6465762d746f2d75706c6f6164732e73332e616d617a6f6e6177732e636f6d2f75706c6f6164732f61727469636c65732f707064666f78796d68786132376277367a666b692e676966)
+
+---
+
+## Get Involved
+
+DEEPU is evolving. If you're interested in contributing features, refining the AI experience, or collaborating on future enhancements, you're welcome to connect and get involved.
+
+---
+
+DEEPU – Intelligent cooking, reimagined.
