@@ -1,3 +1,4 @@
+
 import { FormEvent, useState } from "react";
 import { Loader, Placeholder } from "@aws-amplify/ui-react";
 import "./App.css";
@@ -5,7 +6,6 @@ import { Amplify } from "aws-amplify";
 import { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
-
 import "@aws-amplify/ui-react/styles.css";
 
 Amplify.configure(outputs);
@@ -44,17 +44,17 @@ function App() {
   return (
     <div className="app-container">
       <div className="header-container">
-        <h1 className="main-header">
-          Meet Your Personal
-          <br />
-          <span className="highlight">Recipe AI</span>
-        </h1>
-        <p className="description">
-          Simply type a few ingredients using the format ingredient1,
-          ingredient2, etc., and Recipe AI will generate an all-new recipe on
-          demand...
+        <h1 className="main-header">Hello Chef</h1>
+        <p className="ai-badge">Powered by Deepu AI</p>
+        <p className="deepu-name">
+          D.E.E.P.U. – <i>Data-Enhanced Engine for Preparing Unforgettable Recipes</i>
+        </p>
+        <p className="sub-description">your personal AI Chef 🤖</p>
+        <p className="instruction-text">
+          Type a few ingredients below and get a premium recipe crafted by AI.
         </p>
       </div>
+
       <form onSubmit={onSubmit} className="form-container">
         <div className="search-container">
           <input
@@ -69,13 +69,12 @@ function App() {
           </button>
         </div>
       </form>
+
       <div className="result-container">
         {loading ? (
           <div className="loader-container">
-            <p>Loading...</p>
+            <p className="loading-text">Your recipe is cooking<span className="dots">...</span></p>
             <Loader size="large" />
-            <Placeholder size="large" />
-            <Placeholder size="large" />
             <Placeholder size="large" />
           </div>
         ) : (
