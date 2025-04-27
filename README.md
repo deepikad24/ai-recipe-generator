@@ -31,7 +31,7 @@ Access the live application here:
 
 ## Application Preview
 
-![DEEPU App Screenshot](./deeput-ui-preview.png)
+![DEEPU App Screenshot](./deepu-ui-preview.png)
 
 A clean and intuitive user interface designed to deliver an elegant and focused cooking experience, powered by AI.
 
